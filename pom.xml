@@ -16,7 +16,13 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
-
+  <modules>
+    <module>zuul-service</module>
+    <module>registry-center</module>
+    <module>one</module>
+    <module>two</module>
+    <module>three</module>
+  </modules>
 
 
 
