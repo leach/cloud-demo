@@ -12,8 +12,8 @@ public class DogController {
     @Autowired
     private AppTwoApi appTwoApi;
 
-    @RequestMapping("pig")
-    public String pig(){
+    @RequestMapping("hello")
+    public String hello(){
         return appTwoApi.hello();
     }
 }
