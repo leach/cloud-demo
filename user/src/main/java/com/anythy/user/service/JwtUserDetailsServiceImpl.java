@@ -1,8 +1,7 @@
-package com.anythy.user.handler.service;
+package com.anythy.user.service;
 
 import com.anythy.user.entity.User;
 import com.anythy.user.handler.JwtUserFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

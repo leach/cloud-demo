@@ -21,7 +21,6 @@
     <module>registry-center</module>
     <module>one</module>
     <module>two</module>
-    <module>three</module>
     <module>user</module>
   </modules>
 
