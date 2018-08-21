@@ -21,6 +21,7 @@
     <module>registry-center</module>
     <module>one</module>
     <module>two</module>
+    <module>task</module>
     <module>user</module>
   </modules>
 
@@ -31,6 +32,11 @@
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 

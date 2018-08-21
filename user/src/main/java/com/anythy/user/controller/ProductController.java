@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/p")
-@PreAuthorize("hasRole('USER')")
 public class ProductController {
 
-    @GetMapping
-    public String getUsers() {
+    @GetMapping("/show")
+    @PreAuthorize("hasRole('USER')")
+    public String show() {
         return "product";
     }
 }

@@ -2,6 +2,7 @@ package com.anythy.user.service;
 
 import com.anythy.user.dto.JwtUser;
 import com.anythy.user.entity.User;
+import com.anythy.user.mapper.UserRepository;
 import com.anythy.user.util.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,7 +12,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.Date;
 
 @Service
 public class AuthServiceImpl implements AuthService {
@@ -36,16 +41,15 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public User register(User userToAdd) {
         final String username = userToAdd.getUsername();
-        return userToAdd;
-        /*if(userRepository.findByUsername(username)!=null) {
+        if(UserRepository.findByUsername(username)!=null) {
             return null;
         }
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         final String rawPassword = userToAdd.getPassword();
         userToAdd.setPassword(encoder.encode(rawPassword));
         userToAdd.setLastPasswordResetDate(new Date());
-        userToAdd.setRoles(asList("ROLE_USER"));
-        return userRepository.insert(userToAdd);*/
+        userToAdd.setRoles(Arrays.asList("ROLE_USER", "USER"));
+        return UserRepository.insert(userToAdd);
     }
 
     @Override
